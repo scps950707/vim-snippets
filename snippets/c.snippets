@@ -52,17 +52,20 @@ snippet once
 ## Control Statements
 # if
 snippet if
-	if (${1:/* condition */}) {
+	if (${1:/* condition */})
+	{
 		${2}
 	}
 # else
 snippet el
-	else {
+	else
+	{
 		${1}
 	}
 # else if
 snippet elif
-	else if (${1:/* condition */}) {
+	else if (${1:/* condition */})
+	{
 		${2}
 	}
 # ifi
@@ -73,7 +76,8 @@ snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
 # switch
 snippet switch
-	switch (${1:/* variable */}) {
+	switch (${1:/* variable */})
+	{
 		case ${2:/* variable case */}:
 			${3}
 			${4:break;}${5}
@@ -82,7 +86,8 @@ snippet switch
 	}
 # switch without default
 snippet switchndef
-	switch (${1:/* variable */}) {
+	switch (${1:/* variable */})
+	{
 		case ${2:/* variable case */}:
 			${3}
 			${4:break;}${5}
@@ -96,22 +101,26 @@ snippet case
 ## Loops
 # for
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++})
+	{
 		${4}
 	}
 # for (custom)
 snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
+	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++})
+	{
 		${5}
 	}
 # while
 snippet wh
-	while (${1:/* condition */}) {
+	while (${1:/* condition */})
+	{
 		${2}
 	}
 # do... while
 snippet do
-	do {
+	do
+	{
 		${2}
 	} while (${1:/* condition */});
 ##
@@ -132,17 +141,20 @@ snippet td
 	typedef ${1:int} ${2:MyCustomType};
 # struct
 snippet st
-	struct ${1:`vim_snippets#Filename('$1_t', 'name')`} {
+	struct ${1:`vim_snippets#Filename('$1_t', 'name')`}
+	{
 		${2:/* data */}
 	}${3: /* optional variable list */};
 # typedef struct
 snippet tds
-	typedef struct ${2:_$1 }{
+	typedef struct ${2:_$1 }
+	{
 		${3:/* data */}
 	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
 # typedef enum
 snippet tde
-	typedef enum {
+	typedef enum
+	{
 		${1:/* data */}
 	} ${2:foo};
 ##
