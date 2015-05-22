@@ -29,3 +29,25 @@ snippet ifeq
 	ifeq (${1:cond0}, ${2:cond1})
 		${0}
 	endif
+snippet single
+	SRCS = ${1}
+	EXT  = ${2:.c}
+	OBJS = $(SRCS:$(EXT)=.o)
+	EXEC = ${3:testobj}
+	CXX  = ${4:gcc}
+	CXXFLAGS = ${5}
+	DEP  = ${6:dep}
+
+	all:$(EXEC)
+
+	$(EXEC):$(OBJS)
+		$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJS)
+
+	%.o:%$(EXT)
+		$(CXX) $(CXXFLAGS) -c $<
+
+	dep:
+		$(CXX) $(CXXFLAGS) -M $(SRCS) > $(DEP)
+
+	clean:
+		rm -rf $(EXEC) $(OBJS) $(DEP)
