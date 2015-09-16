@@ -52,33 +52,17 @@ snippet once
 ## Control Statements
 # if
 snippet if
-<<<<<<< HEAD
-	if (${1:/* condition */})
-	{
-=======
 	if (${1:true}) {
 		${0}
 	}
 snippet ife
 	if (${1:true}) {
->>>>>>> upstream/master
 		${2}
 	} else {
 		${0}
 	}
 # else
 snippet el
-<<<<<<< HEAD
-	else
-	{
-		${1}
-	}
-# else if
-snippet elif
-	else if (${1:/* condition */})
-	{
-		${2}
-=======
 	else {
 		${0}
 	}
@@ -86,7 +70,6 @@ snippet elif
 snippet elif
 	else if (${1:true}) {
 		${0}
->>>>>>> upstream/master
 	}
 # ifi
 snippet ifi
@@ -190,8 +173,6 @@ snippet pr
 # fprintf (again, this isn't as nice as TextMate's version, but it works)
 snippet fpr
 	fprintf(${1:stderr}, "${2:%s}\n"${3});
-<<<<<<< HEAD
-=======
 # getopt
 snippet getopt
 	int choice;
@@ -254,4 +235,6 @@ snippet getopt
 # This is kind of convenient
 snippet .
 	[${1}]
->>>>>>> upstream/master
+
+snippet MYDEBUG
+	#define DEBUG(format, args...) printf("[%s:%d] "format, __FILE__, __LINE__, ##args)

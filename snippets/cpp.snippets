@@ -131,3 +131,6 @@ snippet lld
 	[${1}](${2}){
 		${3}
 	}
+
+snippet MYDEBUG
+	#define DEBUG(format, args...) printf("[%s:%d] "format, __FILE__, __LINE__, ##args)
