@@ -77,7 +77,7 @@ snippet double
 			$(CXX) $(CXXFLAGS) -c $<
 
 	dep:
-			$(CXX) $(CXXFLAGS) -M ${CSRCS} ${EX1_SRCS} ${EX2_SRCS} > ${DEP}
+			$(CXX) $(CXXFLAGS) -M $(CSRCS) $(EX1_SRCS) $(EX2_SRCS) > $(DEP)
 
 	clean:
-			rm -rf *.o output ${EXEC1} ${EXEC2} ${DEP}
+			rm -rf *.o output $(EXEC1) $(EXEC2) $(DEP)
