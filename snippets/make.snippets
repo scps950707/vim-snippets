@@ -65,7 +65,7 @@ snippet double
 	CXXFLAGS = ${8}
 	DEP = ${9:dep}
 
-	all: ${EXEC1} ${EXEC2}
+	all: $(EXEC1) $(EXEC2)
 
 	$(EXEC1): $(COBJS) $(EX1_OBJS)
 			$(CXX) $(CXXFLAGS) -o $@ $(COBJS) $(EX1_OBJS)
