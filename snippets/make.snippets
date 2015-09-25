@@ -35,7 +35,7 @@ snippet single
 	OBJS = $(SRCS:$(EXT)=.o)
 	EXEC = ${3:testobj}
 	CXX  = ${4:gcc}
-	CXXFLAGS = ${5}
+	CXXFLAGS = ${5:-Wall -std=c99}
 	DEP  = ${6:dep}
 
 	all:$(EXEC)
@@ -62,7 +62,7 @@ snippet double
 	EXEC1 = ${5:testobj1}
 	EXEC2 = ${6:testobj2}
 	CXX = ${7:gcc}
-	CXXFLAGS = ${8}
+	CXXFLAGS = ${8:-Wall -std=c99}
 	DEP = ${9:dep}
 
 	all: $(EXEC1) $(EXEC2)
