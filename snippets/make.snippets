@@ -80,4 +80,4 @@ snippet double
 			$(CXX) $(CXXFLAGS) -M $(CSRCS) $(EX1_SRCS) $(EX2_SRCS) > $(DEP)
 
 	clean:
-			rm -rf *.o output $(EXEC1) $(EXEC2) $(DEP)
+			rm -rf $(EXEC1) $(EXEC2) $(EX1_OBJS) $(EX2_OBJS) $(DEP)
