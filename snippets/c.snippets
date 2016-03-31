@@ -119,7 +119,7 @@ snippet st
 
 snippet MYDEBUG
 	#define DEBUG(format, args...) printf("[%s:%d] "format, __FILE__, __LINE__, ##args)
-	#define DEBUG(format, args...)
+	/* #define DEBUG(format, args...) */
 snippet MYBOOL
 	#define TRUE 1
 	#define FALSE 0
