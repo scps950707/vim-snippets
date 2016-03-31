@@ -118,8 +118,11 @@ snippet st
 	}${3: /* optional variable list */};
 
 snippet MYDEBUG
+	#ifdef DEBUG
 	#define DEBUG(format, args...) printf("[%s:%d] "format, __FILE__, __LINE__, ##args)
-	/* #define DEBUG(format, args...) */
+	#else
+	#define DEBUG(format, args...)
+	#endif
 snippet MYBOOL
 	#define TRUE 1
 	#define FALSE 0

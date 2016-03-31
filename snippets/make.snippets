@@ -40,6 +40,9 @@ snippet single
 
 	all:$(EXEC)
 
+	debug: CXXFLAGS += -D__DEBUG__
+	debug: $(EXEC)
+
 	$(EXEC):$(OBJS)
 		$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJS)
 
@@ -66,6 +69,9 @@ snippet double
 	DEP = ${9:dep}
 
 	all: $(EXEC1) $(EXEC2)
+
+	debug: CXXFLAGS += -D__DEBUG__
+	debug: $(EXEC)
 
 	$(EXEC1): $(COBJS) $(EX1_OBJS)
 			$(CXX) $(CXXFLAGS) -o $@ $(COBJS) $(EX1_OBJS)

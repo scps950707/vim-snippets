@@ -141,5 +141,8 @@ snippet lld
 	}
 
 snippet MYDEBUG
+	#ifdef DEBUG
 	#define DEBUG(format, args...) printf("[%s:%d] "format, __FILE__, __LINE__, ##args)
-	/* #define DEBUG(format, args...) */
+	#else
+	#define DEBUG(format, args...)
+	#endif
