@@ -1,5 +1,3 @@
-## Main
-# main
 snippet main
 	int main(int argc, char *argv[])
 	{
@@ -13,112 +11,8 @@ snippet mainvoid
 		${0}
 		return 0;
 	}
-##
-## Preprocessor
-# #include <...>
-snippet inc
-	#include <${1:stdio}.h>
-# #include "..."
-snippet Inc
-	#include "${1:`vim_snippets#Filename("$1.h")`}"
-# ifndef...define...endif
-snippet ndef
-	#ifndef $1
-	#define ${1:SYMBOL}
-	#endif
-# define
-snippet def
-	#define
-# ifdef...endif
-snippet ifdef
-	#ifdef ${1:FOO}
-		${2:#define }
-	#endif
-# if
-snippet #if
-	#if ${1:FOO}
-		${0}
-	#endif
-##
-## Control Statements
-# if
-snippet if
-	if (${1:true}) 
-	{
-		${0}
-	}
-snippet ife
-	if (${1:true})
-	{
-		${2}
-	}
-	else 
-	{
-		${0}
-	}
-# else
-snippet el
-	else 
-	{
-		${0}
-	}
-# else if
-snippet elif
-	else if (${1:true}) 
-	{
-		${0}
-	}
-##
-## Loops
-# for
-snippet for
-	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++})
-	{
-		${4}
-	}
-# for (custom)
-snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++})
-	{
-		${5}
-	}
-# while
-snippet wh
-	while (${1:/* condition */})
-	{
-		${2}
-	}
-# do... while
-snippet do
-	do
-	{
-		${2}
-	} while (${1:/* condition */});
-##
-## Functions
-# function definition
-snippet fun
-	${1:void} ${2:function_name}(${3})
-	{
-		${4}
-	}
-# function declaration
-snippet fund
-	${1:void} ${2:function_name}(${3});
-##
-## Types
-# typedef
-snippet td
-	typedef ${1:int} ${2:MyCustomType};
-# struct
-snippet st
-	struct ${1:`vim_snippets#Filename('$1_t', 'name')`}
-	{
-		${2:/* data */}
-	}${3: /* optional variable list */};
-
 snippet MYDEBUG
-	#ifdef DEBUG
+	#ifdef __DEBUG__
 	#define DEBUG(format, args...) printf("[%s:%d] "format, __FILE__, __LINE__, ##args)
 	#else
 	#define DEBUG(format, args...)
