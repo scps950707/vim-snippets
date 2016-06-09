@@ -29,3 +29,8 @@ snippet MYDEBUG
 snippet MYBOOL
 	#define TRUE 1
 	#define FALSE 0
+snippet ndef
+	#ifndef __`toupper(expand('%:r'))`_`toupper(expand('%:e'))`__
+	#define __`toupper(expand('%:r'))`_`toupper(expand('%:e'))`__
+
+	#endif
