@@ -9,8 +9,9 @@ snippet single
 
 	all:$(EXEC)
 
-	debug: CXXFLAGS += -D__DEBUG__
-	debug: $(EXEC)
+	ifdef debug
+	CXXFLAGS += -D__DEBUG__
+	endif
 
 	$(EXEC):$(OBJS)
 		$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJS)
@@ -39,8 +40,9 @@ snippet double
 
 	all: $(EXEC1) $(EXEC2)
 
-	debug: CXXFLAGS += -D__DEBUG__
-	debug: all
+	ifdef debug
+	CXXFLAGS += -D__DEBUG__
+	endif
 
 	$(EXEC1): $(COBJS) $(EX1_OBJS)
 			$(CXX) $(CXXFLAGS) -o $@ $(COBJS) $(EX1_OBJS)
